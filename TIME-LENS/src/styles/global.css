@@ -1,0 +1,33 @@
+:root {
+  --bg: #0d0b09; --bg2: #15120f; --panel: #1b1713; --line: rgba(200,160,110,.18);
+  --text: #ece4d8; --muted: #a39886; --bronze: #b98a56; --bronze-l: #d9b38a;
+  --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Inter', system-ui, sans-serif;
+  --s1: .5rem; --s2: 1rem; --s3: 2rem; --s4: 4rem; --s5: 7rem;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; text-align: left; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.05; }
+em { font-style: italic; color: var(--bronze-l); }
+:focus-visible { outline: 2px solid var(--bronze-l); outline-offset: 3px; }
+
+.eyebrow, .period { font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: var(--bronze-l); }
+.logo { font-family: var(--serif); font-size: 1.5rem; letter-spacing: .3em; font-weight: 600; }
+.logo span { color: var(--bronze); margin-left: .3em; }
+.btn { display: inline-block; padding: .95rem 2.2rem; border: 1px solid var(--bronze); color: var(--text); letter-spacing: .2em; text-transform: uppercase; font-size: .75rem; transition: .4s var(--ease); }
+.btn:hover { background: var(--bronze); color: #120d08; }
+.btn.ghost { border-color: var(--line); }
+.img-fallback { width: 100%; height: 100%; background: radial-gradient(circle at 30% 20%, #6b4c2c, #241b12 60%, #0d0b09); }
+
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
